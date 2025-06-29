@@ -1,0 +1,15 @@
+# Core dependencies
+ast>=0.0.2
+click>=8.0.0
+colorama>=0.4.4
+pyyaml>=6.0
+
+# Development dependencies
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=22.0.0
+flake8>=5.0.0
+mypy>=0.991
+
+# Optional: for advanced parsing
+tree-sitter>=0.20.0 
