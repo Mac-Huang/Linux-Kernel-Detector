@@ -136,4 +136,15 @@ dmypy.json
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Project-specific exclusions
+# Linux kernel source (large, can be re-cloned)
+linux/
+
+# Analysis results (large JSON files)
+data/*.json
+data/*.log
+
+# Kernel analysis specific
+kernel_analysis.log 
