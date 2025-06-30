@@ -58,10 +58,65 @@ python scripts/analysis/concurrency_analyzer.py
 python scripts/reporting/view_results.py --interactive
 ```
 
+## 🗃️ Dataset Building Pipeline
+
+### ✅ **Successfully Implemented**
+
+The project includes a robust dataset building pipeline for training code intelligence models on Linux kernel bug fixes.
+
+#### **Dataset Format**
+```json
+{
+  "input": {
+    "original code": "code before the patch (extracted from a known bug-fix)",
+    "instruction": "the commit message describing what this fix is"
+  },
+  "output": {
+    "diff codes": "the unified diff patch for the bug fix"
+  }
+}
+```
+
+#### **Features**
+- **🔍 Intelligent Bug Detection:** Uses keyword-based filtering to identify bug-fix commits
+- **📝 Focused Code Extraction:** Extracts relevant code context around bug fixes
+- **🔧 Diff Processing:** Parses and formats unified diff patches
+- **⚡ Parallel Processing:** Multi-threaded processing for large repositories
+- **📊 Quality Filtering:** Only includes valid C source file modifications
+
+#### **Usage**
+```bash
+# Activate environment
+conda activate detector
+
+# Build test dataset (small sample)
+cd dataset_builder
+python build_dataset_demo.py
+
+# Build full dataset (entire repository)
+# Edit TEST_MODE = False in build_dataset_demo.py
+python build_dataset_demo.py
+```
+
+#### **Output**
+- **File:** `dataset_builder/output/linux_bugfix_dataset.jsonl`
+- **Format:** JSONL (one JSON object per line)
+- **Content:** Bug-fix commits with original code, commit messages, and diff patches
+
+#### **Keywords Detected**
+- Memory issues: `leak`, `null`, `overflow`, `memory`
+- Security: `security`, `vulnerability`, `exploit`, `buffer`
+- Concurrency: `race`, `deadlock`, `lock`
+- General bugs: `fix`, `bug`, `error`, `failure`, `crash`
+
 ## 📁 Project Structure
 
 ```
 ├── 📁 data/                    # Analysis results and logs
+├── 📁 dataset_builder/         # Dataset building pipeline
+│   ├── build_dataset.py        # Main dataset builder
+│   ├── build_dataset_demo.py   # Test dataset builder
+│   └── output/                 # Generated datasets
 ├── 📁 docs/                    # Documentation
 ├── 📁 reports/                 # Generated reports
 ├── 📁 scripts/                 # Analysis and utility scripts
