@@ -1,0 +1,6 @@
+2025-06-29 12:48:43,493 - INFO - Starting kernel analysis of linux
+2025-06-29 12:48:47,304 - INFO - Found 35588 C files to analyze
+2025-06-29 12:52:03,592 - INFO - Results saved to results.json
+2025-06-29 13:00:18,110 - INFO - Starting kernel analysis of linux
+2025-06-29 13:00:21,130 - INFO - Found 35588 C files to analyze
+2025-06-29 13:03:09,849 - INFO - Results saved to results.json

@@ -146,8 +146,7 @@ linux/
 data/*.json
 data/*.log
 
-# Kernel analysis specific
-kernel_analysis.log bfg-1.15.0.jar  
+# Kernel analysis specific  
 dataset_builder/output/linux_bugfix_dataset.jsonl  
 dataset_builder/output/linux_bugfix_prompt_completion.jsonl  
 dataset_builder/output/linux_bugfix_dataset_test.jsonl 
